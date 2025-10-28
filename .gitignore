@@ -21,3 +21,4 @@ Thumbs.db
 
 # Log files
 *.log
+.intellijPlatform/

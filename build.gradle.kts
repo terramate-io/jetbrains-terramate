@@ -1,7 +1,7 @@
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.9.21"
-    id("org.jetbrains.intellij.platform") version "2.2.1"
+    id("org.jetbrains.intellij.platform") version "2.10.2"
 }
 
 group = "io.terramate"
@@ -43,7 +43,7 @@ intellijPlatform {
             <h3>0.0.1</h3>
             <ul>
                 <li>Initial release</li>
-                <li>Syntax highlighting for Terramate files (.tm, .tm.hcl)</li>
+                <li>Syntax highlighting for Terramate files (.tm, .tm.hcl, .tmgen)</li>
                 <li>Language Server Protocol integration with terramate-ls</li>
                 <li>Code completion and validation</li>
                 <li>Configurable language server settings</li>
