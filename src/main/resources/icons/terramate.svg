@@ -1,0 +1,6 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Placeholder Terramate icon - replace with actual logo -->
+  <rect width="16" height="16" rx="2" fill="#6B46C1"/>
+  <path d="M4 6L8 3L12 6V11L8 14L4 11V6Z" fill="white"/>
+  <path d="M8 3V8M8 8L4 11M8 8L12 11" stroke="#6B46C1" stroke-width="1" stroke-linecap="round"/>
+</svg>

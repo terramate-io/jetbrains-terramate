@@ -1,0 +1,128 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>io.terramate.intellij</id>
+    <name>Terramate</name>
+    <vendor email="support@terramate.io" url="https://terramate.io">Terramate GmbH</vendor>
+
+    <description><![CDATA[
+    <p>Official Terramate plugin for IntelliJ IDEA and other JetBrains IDEs.</p>
+
+    <p><strong>Terramate</strong> helps you manage and orchestrate Terraform/OpenTofu infrastructure with powerful code generation, stack management, and change detection.</p>
+
+    <h3>Features</h3>
+    <ul>
+      <li><strong>Syntax Highlighting</strong> - Full support for Terramate language constructs (.tm, .tm.hcl files)</li>
+      <li><strong>Language Server Integration</strong> - Real-time validation, smart autocomplete, and diagnostics</li>
+      <li><strong>Code Completion</strong> - Context-aware suggestions for Terramate blocks and attributes</li>
+      <li><strong>Go to Definition</strong> - Navigate through your Terramate code</li>
+      <li><strong>Hover Documentation</strong> - Inline help and documentation</li>
+      <li><strong>Pro Features</strong> - Support for bundles, components, and scaffolding (requires terramate-ls with Pro features)</li>
+    </ul>
+
+    <h3>Requirements</h3>
+    <p>Install <code>terramate-ls</code> language server from <a href="https://terramate.io/docs/cli/installation">https://terramate.io/docs/cli/installation</a></p>
+
+    <h3>Getting Started</h3>
+    <ol>
+      <li>Install terramate-ls (available in PATH or configure custom path)</li>
+      <li>Open a project with Terramate files (.tm or .tm.hcl)</li>
+      <li>Start coding with full IDE support!</li>
+    </ol>
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <h3>0.0.1</h3>
+    <ul>
+      <li>Initial release</li>
+      <li>Syntax highlighting for Terramate files</li>
+      <li>Language Server Protocol integration</li>
+      <li>Code completion and validation</li>
+    </ul>
+    ]]></change-notes>
+
+    <!-- Product and plugin compatibility requirements -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.redhat.devtools.lsp4ij</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- File Type -->
+        <fileType
+            name="Terramate"
+            implementationClass="io.terramate.intellij.TerramateFileType"
+            fieldName="INSTANCE"
+            language="Terramate"
+            extensions="tm;tmgen"
+            patterns="*.tm.hcl"/>
+
+        <!-- Language -->
+        <lang.parserDefinition
+            language="Terramate"
+            implementationClass="io.terramate.intellij.TerramateParserDefinition"/>
+
+        <!-- Syntax Highlighter -->
+        <lang.syntaxHighlighterFactory
+            language="Terramate"
+            implementationClass="io.terramate.intellij.TerramateSyntaxHighlighterFactory"/>
+
+        <!-- Commenter -->
+        <lang.commenter
+            language="Terramate"
+            implementationClass="io.terramate.intellij.TerramateCommenter"/>
+
+        <!-- Bracket Matcher -->
+        <lang.braceMatcher
+            language="Terramate"
+            implementationClass="io.terramate.intellij.TerramateBraceMatcher"/>
+
+        <!-- Code Folding -->
+        <lang.foldingBuilder
+            language="Terramate"
+            implementationClass="io.terramate.intellij.TerramateFoldingBuilder"/>
+
+        <!-- Settings -->
+        <applicationConfigurable
+            parentId="language"
+            instance="io.terramate.intellij.settings.TerramateSettingsConfigurable"
+            id="io.terramate.intellij.settings.TerramateSettingsConfigurable"
+            displayName="Terramate"/>
+
+        <applicationService
+            serviceImplementation="io.terramate.intellij.settings.TerramateSettings"/>
+
+        <!-- File Icon Provider -->
+        <iconProvider
+            implementation="io.terramate.intellij.TerramateIconProvider"/>
+    </extensions>
+
+    <!-- Language Server Configuration -->
+    <extensions defaultExtensionNs="com.redhat.devtools.lsp4ij">
+        <server id="terramateLanguageServer"
+                name="Terramate Language Server"
+                factoryClass="io.terramate.intellij.lsp.TerramateLspServerFactory">
+            <description><![CDATA[
+Language Server for Terramate configuration files (.tm, .tm.hcl)
+            ]]></description>
+        </server>
+
+        <!-- Map Terramate language to the language server -->
+        <languageMapping language="Terramate"
+                         serverId="terramateLanguageServer"/>
+
+        <!-- File pattern mapping -->
+        <fileNamePatternMapping
+            patterns="*.tm;*.tmgen;*.tm.hcl"
+            serverId="terramateLanguageServer"
+            languageId="terramate"/>
+    </extensions>
+
+    <actions>
+        <action
+            id="terramate.restartLanguageServer"
+            class="io.terramate.intellij.actions.RestartLanguageServerAction"
+            text="Restart Terramate Language Server"
+            description="Restart the Terramate language server">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
