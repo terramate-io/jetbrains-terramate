@@ -1,6 +1,6 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>io.terramate.intellij</id>
+    <id>io.terramate</id>
     <name>Terramate</name>
     <vendor email="support@terramate.io" url="https://terramate.io">Terramate GmbH</vendor>
 
@@ -84,7 +84,7 @@
         <applicationConfigurable
             parentId="language"
             instance="io.terramate.intellij.settings.TerramateSettingsConfigurable"
-            id="io.terramate.intellij.settings.TerramateSettingsConfigurable"
+            id="io.terramate.settings.TerramateSettingsConfigurable"
             displayName="Terramate"/>
 
         <applicationService

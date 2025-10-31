@@ -43,12 +43,22 @@ intellijPlatform {
             <h3>0.0.1</h3>
             <ul>
                 <li>Initial release</li>
-                <li>Syntax highlighting for Terramate files (.tm, .tm.hcl)</li>
+                <li>Syntax highlighting for Terramate files (.tm, .tm.hcl, .tmgen)</li>
                 <li>Language Server Protocol integration with terramate-ls</li>
                 <li>Code completion and validation</li>
                 <li>Configurable language server settings</li>
             </ul>
         """.trimIndent()
+    }
+    
+    pluginVerification {
+        ides {
+            // Test against multiple recent IDE versions for compatibility
+            ide("IC-2024.2")  // IntelliJ IDEA Community 2024.2 (minimum supported)
+            ide("IC-2024.3")  // IntelliJ IDEA Community 2024.3
+            ide("IC-2025.1")  // IntelliJ IDEA Community 2025.1
+            ide("IC-2025.2")  // IntelliJ IDEA Community 2025.2 (latest)
+        }
     }
     
     signing {
