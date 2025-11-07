@@ -58,6 +58,7 @@ intellijPlatform {
             ide("IC-2024.3")  // IntelliJ IDEA Community 2024.3
             ide("IC-2025.1")  // IntelliJ IDEA Community 2025.1
             ide("IC-2025.2")  // IntelliJ IDEA Community 2025.2 (latest)
+            ide("IU-2025.2")  // IntelliJ IDEA Ultimate 2025.2 (latest)
         }
     }
     
