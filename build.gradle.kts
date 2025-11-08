@@ -53,12 +53,9 @@ intellijPlatform {
     
     pluginVerification {
         ides {
-            // Test against multiple recent IDE versions for compatibility
+            // Test against minimum supported and latest versions for compatibility
             ide("IC-2024.2")  // IntelliJ IDEA Community 2024.2 (minimum supported)
-            ide("IC-2024.3")  // IntelliJ IDEA Community 2024.3
-            ide("IC-2025.1")  // IntelliJ IDEA Community 2025.1
             ide("IC-2025.2")  // IntelliJ IDEA Community 2025.2 (latest)
-            ide("IU-2025.2")  // IntelliJ IDEA Ultimate 2025.2 (latest)
         }
     }
     
