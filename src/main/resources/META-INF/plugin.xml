@@ -4,6 +4,10 @@
     <name>Terramate</name>
     <vendor email="support@terramate.io" url="https://terramate.io">Terramate GmbH</vendor>
 
+    <!-- Plugin Icons for Marketplace -->
+    <icon>terramate_icon.svg</icon>
+    <icon dark="true">terramate_icon_dark.svg</icon>
+
     <description><![CDATA[
     <p>Official Terramate plugin for IntelliJ IDEA and other JetBrains IDEs.</p>
 
