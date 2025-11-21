@@ -1,11 +1,11 @@
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.9.21"
-    id("org.jetbrains.intellij.platform") version "2.2.1"
+    id("org.jetbrains.intellij.platform") version "2.10.4"
 }
 
 group = "io.terramate"
-version = "0.0.1"
+version = "0.0.2"
 
 repositories {
     mavenCentral()
@@ -54,8 +54,7 @@ intellijPlatform {
     pluginVerification {
         ides {
             // Test against minimum supported and latest versions for compatibility
-            ide("IC-2024.2")  // IntelliJ IDEA Community 2024.2 (minimum supported)
-            ide("IC-2025.2")  // IntelliJ IDEA Community 2025.2 (latest)
+            recommended()
         }
     }
     

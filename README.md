@@ -85,9 +85,9 @@ View logs in: **Help** → **Show Log in Finder/Explorer**
 
 ## Compatibility
 
-- **IDE**: IntelliJ IDEA 2023.3+ (Community and Ultimate)
-- **Also supports**: PyCharm, WebStorm, GoLand, and other JetBrains IDEs 2023.3+
-- **JDK**: Java 17 or later required for development
+- **IDE**: IntelliJ IDEA 2024.2+ (Community and Ultimate)
+- **Also supports**: PyCharm, WebStorm, GoLand, and other JetBrains IDEs 2024.2+
+- **JDK**: Java 21 or later required for development
 
 ## Related Projects
 
@@ -103,4 +103,4 @@ Apache 2.0 - See [LICENSE](LICENSE) for details.
 
 - [Documentation](https://terramate.io/docs)
 - [Discord Community](https://terramate.io/discord)
-- [GitHub Issues](https://github.com/terramate-io/intellij-terramate/issues)
+- [GitHub Issues](https://github.com/terramate-io/terramate-jetbrains/issues)
