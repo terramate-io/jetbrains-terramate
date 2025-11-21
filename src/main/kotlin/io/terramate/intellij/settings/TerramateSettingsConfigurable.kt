@@ -1,8 +1,9 @@
 package io.terramate.intellij.settings
 
-import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory
+import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.options.Configurable
 import com.intellij.openapi.ui.ComboBox
+import com.intellij.openapi.ui.TextBrowseFolderListener
 import com.intellij.openapi.ui.TextFieldWithBrowseButton
 import com.intellij.ui.components.JBCheckBox
 import com.intellij.ui.components.JBTextField
@@ -25,11 +26,18 @@ class TerramateSettingsConfigurable : Configurable {
     private var settingsPanel: JPanel? = null
 
     init {
+        val fileDescriptor = FileChooserDescriptor(
+            true,  // chooseFiles
+            false, // chooseFolders
+            false, // chooseJars
+            false, // chooseJarsAsFiles
+            false, // chooseJarContents
+            false  // chooseMultiple
+        ).withTitle("Select terramate-ls Binary")
+            .withDescription("Select the path to the terramate-ls executable")
+        
         binPathField.addBrowseFolderListener(
-            "Select terramate-ls Binary",
-            "Select the path to the terramate-ls executable",
-            null,
-            FileChooserDescriptorFactory.createSingleFileDescriptor()
+            TextBrowseFolderListener(fileDescriptor)
         )
     }
 

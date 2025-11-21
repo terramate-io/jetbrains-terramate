@@ -7,9 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2025-11-21
+
 ### Added
 
 - Add Terramate icon for the JetBrains marketplace listing
+
+### Changed
+
+- Updated IntelliJ Platform Gradle Plugin from 2.2.1 to 2.10.4
+- Updated Gradle wrapper from 8.5 to 8.13
+- Fixed deprecated API usages in settings configuration for future compatibility
+- Modernized plugin verification configuration to use recommended IDE versions
+
+### Fixed
+
+- Removed usage of deprecated `FileChooserDescriptorFactory.createSingleFileDescriptor()` API
+- Removed usage of deprecated `TextFieldWithBrowseButton.addBrowseFolderListener()` API
+- Fixed build configuration deprecation warnings
 
 ## [0.0.1] - 2025-10-31
 
@@ -40,6 +55,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Built on IntelliJ Platform 2024.2
 - Uses LSP4IJ 0.13.0 for Language Server Protocol support
 
-[Unreleased]: https://github.com/terramate-io/terramate-jetbrains/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/terramate-io/terramate-jetbrains/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/terramate-io/terramate-jetbrains/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/terramate-io/terramate-jetbrains/releases/tag/v0.0.1
 

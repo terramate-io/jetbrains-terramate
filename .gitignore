@@ -10,6 +10,9 @@ out/
 build/
 !gradle-wrapper.jar
 
+# IntelliJ Platform Plugin
+.intellijPlatform/
+
 # Plugin build output
 dist/
 
